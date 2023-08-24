@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  
+  
+      <div class="w-50">
+
+        <form action="{{ url_for('addData') }}" method="POST">
+          <div class="form-group mb-3 w-75">
+            <input type="text" class="form-control" name="titre" id="titre" placeholder="Titre">
+          </div>
+
+          <div class="form-group mb-3">
+            <textarea class="form-control" name="contenu" id="content" cols="30" rows="5" placeholder="Note" required></textarea>
+          </div>
+          
+          <select class="form-select w-25" name="marquage">
+            <option value="Elevee" name="marquage" selected>Elevée</option>
+            <option value="Moyenne" name="marquage">Moyenne</option>
+            <option value="Faible" name="marquage">Faible</option>
+          </select>
+          
+          <div class="form-group mt-3">
+            <input type="submit" class="btn btn-success btn-block" value="Ajouter">
+          </div>
+        </form>
+      </div>
+
+{% endblock  %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+  <div class="d-flex align-items-center justify-content-start">
+      
+    <div class="row">
+      {% for note in data %}
+        {% set i = loop.index %}
+        
+        <div class="card border-warning mb-3 p-0 mx-2">
+          <div class="card-header">
+            <h5 class="card-title p-0" style="text-transform: capitalize;">{{ note.titre }}</h5>
+            <p class="card-text float-end"><small class="text-muted">{{ note.marquage }}</small></p>
+          </div>
+          <div class="card-body text-secondary">
+            <p class="card-text">{{ note.contenu }}</p>
+          </div>
+          <div class="card-footer d-flex justify-content-between">
+            <div class="link">
+              <a href="/update/{{note.id}}"><i class="fas fa-edit mx-3"></i></a>
+              <a href="{{ url_for('delete',id=note['id']) }}" onclick="return confirm('Vous êtes sûr de vouloir le supprimer ?')"><i class="fas fa-trash-alt text-danger"></i></a>
+            </div>
+            <p class="card-text"><small class="text-muted">{{ note.DATE }}</small></p>
+          </div>
+        </div>
+        
+        {% endfor %}
+      </div>
+      
+  </div>
+
+  
+  
+{% endblock %}

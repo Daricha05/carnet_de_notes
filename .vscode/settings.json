@@ -1,0 +1,11 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "datadase",
+            "database": "${workspaceFolder:carnet}/database.db"
+        }
+    ]
+}
